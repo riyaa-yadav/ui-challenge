@@ -1,0 +1,18 @@
+.top_header {
+  height: 40px;
+  background-color: rgb(158, 173, 186);
+  .dots_container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    gap: 8px;
+    padding-left: 8px;
+    div {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background-color: rgb(143, 158, 172);
+    }
+  }
+}

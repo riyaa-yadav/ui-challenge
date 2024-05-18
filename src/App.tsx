@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/layout";
 import "./App.css";
 
 // Lazy-loaded components
@@ -36,7 +37,13 @@ const App: React.FC = () => {
         <Routes>
           {Object.keys(routes).map((key) => {
             const { path, component: Component } = routes[key];
-            return <Route key={key} path={path} element={<Component />} />;
+            return (
+              <Route
+                key={key}
+                path={path}
+                element={<Layout component={Component} />}
+              />
+            );
           })}
         </Routes>
       </Suspense>
