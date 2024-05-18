@@ -1,7 +1,7 @@
 .report_list_container {
   position: relative;
   left: 300px;
-  width: calc(100% - 340px);
+  width: calc(100% - 350px);
   padding: 10px 20px 20px;
   h2 {
     font-weight: 500;

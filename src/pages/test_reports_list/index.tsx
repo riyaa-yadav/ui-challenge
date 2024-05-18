@@ -34,7 +34,7 @@ const TestReportList: React.FC = () => {
                 <Link
                   key={id}
                   className="report"
-                  to={`/test-report-details/${orgId}/${id}`}
+                  to={`/${orgId}/reports-list/${id}`}
                 >
                   <div>
                     <h4>{name}</h4>

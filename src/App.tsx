@@ -21,11 +21,11 @@ const routes: Record<string, RouteConfig> = {
     component: OrganizationPicker,
   },
   testReportsList: {
-    path: "/test-reports-list/:orgId",
+    path: "/:orgId/reports-list",
     component: TestReportsList,
   },
   testReportDetails: {
-    path: "/test-report-details/:orgId/:reportId",
+    path: "/:orgId/reports-list/:reportId",
     component: TestReportDetails,
   },
 };

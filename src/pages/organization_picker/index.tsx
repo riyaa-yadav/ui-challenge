@@ -26,7 +26,7 @@ const OrganizationPicker: React.FC = () => {
                 <Link
                   key={org.id}
                   className="organization"
-                  to={`/test-reports-list/${org.id}`}
+                  to={`${org.id}/reports-list`}
                 >
                   <img height={"40px"} width={"40px"} src={orgImg} />
                   <div className="organisation_name">
