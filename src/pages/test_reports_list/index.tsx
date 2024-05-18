@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../../components/sidebar";
+import Loader from "../../components/loader";
 import useTestReportList from "./useTestReportsList";
 import { timeAgo, convertMilliseconds } from "../../utils/functions";
-import { Report, OrgDetails } from "./types";
+import { Report } from "./types";
 import "./index.css";
 
 const TestReportList: React.FC = () => {
@@ -17,9 +18,7 @@ const TestReportList: React.FC = () => {
       <div className="report_list_container">
         <h2>Test Report</h2>
         {reportsLoading ? (
-          <div className="loader">
-            <div className="spinner"></div>
-          </div>
+          <Loader />
         ) : (
           <div className="report_list">
             {reports?.map((report: Report) => {

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useOrganizationPicker from "./useOrganizationPicker";
 import { Organization } from "./types";
+import Loader from "../../components/loader";
 import orgImg from "../../assets/images/org.png";
 import "./index.css";
 
@@ -15,9 +16,7 @@ const OrganizationPicker: React.FC = () => {
       <h1>Levo</h1>
       <div className="organizations_container">
         {loading ? (
-          <div className="loader">
-            <div className="spinner"></div>
-          </div>
+          <Loader />
         ) : (
           <>
             <h2>Organizations</h2>
