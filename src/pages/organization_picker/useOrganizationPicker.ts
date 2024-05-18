@@ -15,7 +15,7 @@ const useOrganizationPicker = () => {
     const fetchOrganizations = async () => {
       setLoading(true);
       try {
-        // const response = await api.get<Organization[]>("/organizations");
+        // const response = await api.get<Organization[]>("/organizations.json?key=2e435a20");
         setOrganizations([
           { id: "123", name: "Org A" },
           { id: "23", name: "Org B" },

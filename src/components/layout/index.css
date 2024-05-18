@@ -1,5 +1,9 @@
 .top_header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 40px;
+  z-index: 1;
   background-color: rgb(158, 173, 186);
   .dots_container {
     display: flex;
