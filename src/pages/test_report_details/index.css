@@ -1,0 +1,22 @@
+.report_details_container {
+  position: relative;
+  left: 300px;
+  width: calc(100% - 350px);
+  padding: 10px 20px 20px;
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 35px;
+    margin-top: 10px;
+  }
+  .results_container {
+    border-bottom: 2px solid rgb(208, 218, 226);
+    h3 {
+      color: rgb(146, 136, 248);
+      text-decoration: underline;
+      text-underline-offset: 0.6em;
+      text-decoration-thickness: 3px;
+    }
+  }
+}

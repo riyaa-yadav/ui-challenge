@@ -1,0 +1,42 @@
+.filter {
+  color: rgb(146, 159, 170);
+  margin: 15px 0;
+  input {
+    border: 2px solid rgb(208, 218, 226);
+    width: 100%;
+    padding: 6px 8px;
+    box-sizing: border-box;
+  }
+  .failure_header {
+    color: rgb(211, 69, 91);
+  }
+  .success_header {
+    color: rgb(48, 130, 115);
+  }
+  .result_type {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .result_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .result {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(242, 245, 247);
+      padding: 10px 20px;
+      color: rgb(125, 141, 155);
+      font-size: 14px;
+    }
+    .failure_result {
+      border-left: 3px solid rgb(211, 69, 91);
+    }
+    .success_result {
+      border-left: 3px solid rgb(48, 130, 115);
+    }
+  }
+}
