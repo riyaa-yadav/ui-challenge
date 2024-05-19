@@ -20,7 +20,7 @@ const Icons: React.FC<StatusProps> = ({ status }) => {
 
 const Status: React.FC<StatusProps> = ({ status }) => {
   return (
-    <div className={`status_container ${status}`}>
+    <div className={`status_container status_${status}`}>
       <Icons status={status} />
       <span>{status}</span>
     </div>

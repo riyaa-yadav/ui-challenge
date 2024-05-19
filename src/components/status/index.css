@@ -11,10 +11,10 @@
   font-size: 14px;
 }
 
-.failed {
+.status_failed {
   background-color: rgb(211, 69, 91);
   opacity: 60%;
 }
-.success {
+.status_success {
   background-color: rgb(48, 130, 115);
 }
