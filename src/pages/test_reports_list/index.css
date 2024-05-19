@@ -13,7 +13,6 @@
     gap: 12px;
     .report {
       cursor: pointer;
-      text-decoration: none;
       width: calc(100% - 20px);
       background-color: rgb(242, 245, 247);
       padding: 10px;

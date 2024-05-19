@@ -7,6 +7,9 @@
   border-right: 2px solid rgb(208, 218, 226);
   padding: 10px 20px;
   text-align: center;
+  h1 {
+    color: black;
+  }
   h3 {
     color: rgb(41, 56, 69);
   }

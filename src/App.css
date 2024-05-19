@@ -15,3 +15,7 @@ p {
   top: 40px;
   display: flex;
 }
+
+a {
+  text-decoration: none;
+}
