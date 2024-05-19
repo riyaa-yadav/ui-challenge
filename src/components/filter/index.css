@@ -18,6 +18,8 @@
     align-items: center;
     gap: 10px;
     padding: 10px 0;
+    width: fit-content;
+    cursor: pointer;
   }
   .result_list {
     display: flex;

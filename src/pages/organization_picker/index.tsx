@@ -28,7 +28,12 @@ const OrganizationPicker: React.FC = () => {
                   className="organization"
                   to={`${org.id}/reports-list`}
                 >
-                  <img height={"40px"} width={"40px"} src={orgImg} />
+                  <img
+                    height={"40px"}
+                    width={"40px"}
+                    src={orgImg}
+                    alt="org_image"
+                  />
                   <div className="organisation_name">
                     <h4>{org.name}</h4>
                   </div>
