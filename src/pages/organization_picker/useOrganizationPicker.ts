@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { Organization } from "./types";
+import { orgListData } from "../../utils/constant";
 
 type UseOrganizationPickerState = {
   loading: boolean;
@@ -16,10 +17,7 @@ const useOrganizationPicker = () => {
       setLoading(true);
       try {
         // const response = await api.get<Organization[]>("organizations.json?key=2e435a20");
-        setOrganizations([
-          { id: "123", name: "Org A" },
-          { id: "23", name: "Org B" },
-        ]);
+        setOrganizations(orgListData);
       } catch (error) {
         console.error("Error fetching organizations:", error);
       } finally {
