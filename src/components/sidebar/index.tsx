@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Loader from "../loader";
 import "./index.css";
 
@@ -11,7 +12,9 @@ const Sidebar: React.FC<SidebarProps> = ({ name, loading }) => {
   return (
     <div className="sidebar">
       <div>
-        <h1>Levo</h1>
+        <Link to="/">
+          <h1>Levo</h1>
+        </Link>
         {loading ? <Loader /> : <h3>{name}</h3>}
       </div>
       <div className="sidebar_reports">
