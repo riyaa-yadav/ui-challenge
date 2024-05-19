@@ -1,0 +1,43 @@
+.report_list_container {
+  position: relative;
+  left: 300px;
+  width: calc(100% - 350px);
+  padding: 10px 20px 20px;
+  h2 {
+    font-weight: 500;
+    color: rgb(101, 88, 245);
+  }
+  .report_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    .report {
+      cursor: pointer;
+      width: calc(100% - 20px);
+      background-color: rgb(242, 245, 247);
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      :first-child {
+        h4 {
+          color: rgb(120, 136, 150);
+        }
+        p {
+          color: rgb(206, 216, 224);
+        }
+      }
+      :last-child {
+        display: flex;
+        .passed {
+          color: rgb(48, 130, 115);
+          width: 150px;
+        }
+        .failed {
+          color: rgb(211, 69, 91);
+          width: 150px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  height: 100%;
+  .link {
+    color: rgb(146, 136, 248);
+  }
+  .span {
+    color: rgb(41, 56, 69);
+  }
+}

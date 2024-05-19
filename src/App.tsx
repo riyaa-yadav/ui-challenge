@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/layout";
+import "./App.css";
 
-export const App: React.FunctionComponent = () => {
+// Lazy-loaded components
+const OrganizationPicker = lazy(() => import("./pages/organization_picker"));
+const TestReportsList = lazy(() => import("./pages/test_reports_list"));
+const TestReportDetails = lazy(() => import("./pages/test_report_details"));
+
+// Define the type for the routes
+type RouteConfig = {
+  path: string;
+  component: React.LazyExoticComponent<React.ComponentType<any>>;
+};
+
+// Define the routes object with proper typing
+const routes: Record<string, RouteConfig> = {
+  organizationPicker: {
+    path: "/",
+    component: OrganizationPicker,
+  },
+  testReportsList: {
+    path: "/:orgId/reports-list",
+    component: TestReportsList,
+  },
+  testReportDetails: {
+    path: "/:orgId/reports-list/:reportId",
+    component: TestReportDetails,
+  },
+};
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="logo" />
-        <p>
-          UI Engineer Position Take Home Challenge
-        </p>
-        <a
-          className="App-link"
-          href="https://doc.clickup.com/d/h/a0kg5-1183/8d71939ada06572"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open the Exercise
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          {Object.keys(routes).map((key) => {
+            const { path, component: Component } = routes[key];
+            return (
+              <Route
+                key={key}
+                path={path}
+                element={<Layout component={Component} />}
+              />
+            );
+          })}
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
