@@ -22,7 +22,7 @@ const Icons: React.FC<StatusProps> = ({ status }) => {
 
 type FilterProps = {
   filterData: FilterData;
-  onFilter: () => void;
+  onFilter: (url: string) => void;
   totalCount: number | undefined;
 };
 
@@ -33,7 +33,16 @@ const Filter: React.FC<FilterProps> = ({
 }) => {
   return (
     <div className="filter">
-      <input type="text" placeholder="Filter by endpoint" />
+      <input
+        type="text"
+        placeholder="Filter by endpoint..."
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            const inputValue = e.currentTarget.value.trim();
+            onFilter(inputValue);
+          }
+        }}
+      />
       {Object.keys(filterData).map(
         (key) =>
           filterData[key].length > 0 && (

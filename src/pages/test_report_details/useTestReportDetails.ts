@@ -19,6 +19,7 @@ const useTestReportDetails = () => {
   const [reportDetails, setReportDetails] = useState<ReportDetails | null>(
     null
   );
+  const [allFilterData, setAllFilterData] = useState<FilterData>({});
   const [filterData, setFilterData] = useState<FilterData>({});
 
   const categorizeEndpoints = (endpoints: Endpoint[]): FilterData => {
@@ -35,7 +36,19 @@ const useTestReportDetails = () => {
     }, {} as FilterData);
   };
 
-  const onFilter = () => {};
+  type FilterData = {
+    [key: string]: Endpoint[];
+  };
+
+  const onFilter = (url: string) => {
+    const filteredRes: FilterData = {};
+    for (const key in allFilterData) {
+      filteredRes[key] = allFilterData[key].filter((item) =>
+        item.url.includes(url)
+      );
+    }
+    setFilterData(filteredRes);
+  };
 
   const fetchReportDetails = async () => {
     setReportDetailsLoading(true);
@@ -164,7 +177,9 @@ const useTestReportDetails = () => {
         commit: "8i56xn1wq7",
         environment_url: "http://shareasale.com",
       });
-      setFilterData(categorizeEndpoints(endpoints));
+      const categorizeEndpointsData = categorizeEndpoints(endpoints);
+      setAllFilterData(categorizeEndpointsData);
+      setFilterData(categorizeEndpointsData);
     } catch (error) {
       console.error("Error fetching report details:", error);
     } finally {

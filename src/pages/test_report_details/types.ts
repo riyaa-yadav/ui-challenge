@@ -39,6 +39,6 @@ type UseTestReportListState = {
 export type UseTestReportDetailsReturnType = {
   states: UseTestReportListState;
   functions: {
-    onFilter: () => void;
+    onFilter: (url: string) => void;
   };
 };

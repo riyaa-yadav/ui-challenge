@@ -50,7 +50,7 @@ const TestReportDetails: React.FC = () => {
               <Breadcrumbs items={breadcrumbsData} />
               <Status
                 status={
-                  filterData["SUCCESS"].length ===
+                  filterData?.["SUCCESS"]?.length ===
                   reportDetails?.endpoints?.length
                     ? "success"
                     : "failed"
